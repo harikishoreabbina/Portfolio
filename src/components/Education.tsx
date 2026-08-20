@@ -1,53 +1,87 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Education() {
   return (
     <section
       id="education"
-      className="relative border-t border-white/10 px-6 py-24 md:px-12 lg:px-20"
+      className="relative w-full max-w-full overflow-x-hidden border-t border-white/10 px-6 py-24 md:px-12 lg:px-20"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto w-full min-w-0 max-w-7xl">
 
-        {/* Section Label */}
-        <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
-          Education
-        </p>
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{
+            duration: 0.7,
+            ease: "easeOut",
+          }}
+        >
+          <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
+            Education
+          </p>
 
-        <h2 className="mt-6 text-3xl font-bold md:text-5xl">
-          Academic Background
-        </h2>
+          <h2 className="mt-6 break-words text-3xl font-bold md:text-5xl">
+            Academic Background
+          </h2>
 
-        <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400 md:text-lg">
-          My academic background combines Data Science with Electronics and
-          Computer Science, providing a strong foundation across data systems,
-          analytics, programming, machine learning, and emerging technologies.
-        </p>
+          <p className="mt-6 max-w-2xl break-words text-base leading-8 text-zinc-400 md:text-lg">
+            My academic background combines Data Science with Electronics and
+            Computer Science, providing a strong foundation across data systems,
+            analytics, programming, machine learning, and emerging technologies.
+          </p>
+        </motion.div>
 
         {/* Education Cards */}
-        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+        <div className="mt-14 grid min-w-0 gap-8 lg:grid-cols-2">
 
           {/* Rowan University */}
-          <article className="overflow-hidden rounded-3xl border border-white/10 bg-[#111827] transition duration-300 hover:-translate-y-1 hover:border-white/20">
+          <motion.article
+            initial={{
+              opacity: 0,
+              y: 60,
+              scale: 0.96,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.2,
+            }}
+            transition={{
+              duration: 0.8,
+              delay: 0,
+              ease: "easeOut",
+            }}
+            className="min-w-0 overflow-hidden rounded-3xl border border-white/10 bg-[#111827] transition-colors duration-300 hover:border-white/20"
+          >
 
-            {/* Logo Banner */}
-            <div className="flex h-52 items-center justify-center bg-white p-8">
+            {/* Rowan Logo */}
+            <div className="flex h-52 w-full items-center justify-center overflow-hidden bg-white p-6 sm:p-8">
               <Image
                 src="/rowan-logo.png"
                 alt="Rowan University logo"
                 width={420}
                 height={180}
-                className="max-h-40 w-auto object-contain"
+                className="max-h-40 max-w-full w-auto object-contain"
               />
             </div>
 
-            {/* Content */}
-            <div className="p-8 text-center md:p-10">
+            {/* Rowan Content */}
+            <div className="min-w-0 p-7 text-center md:p-10">
 
-              <h3 className="text-2xl font-bold uppercase tracking-wide text-white">
+              <h3 className="break-words text-2xl font-bold uppercase tracking-wide text-white">
                 Rowan University
               </h3>
 
-              <p className="mt-7 text-xl leading-8 text-zinc-200">
+              <p className="mt-7 break-words text-xl leading-8 text-zinc-200">
                 Master of Science in Data Science
               </p>
 
@@ -78,7 +112,7 @@ export default function Education() {
                   ].map((course) => (
                     <span
                       key={course}
-                      className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-zinc-400"
+                      className="max-w-full break-words rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-zinc-400"
                     >
                       {course}
                     </span>
@@ -88,30 +122,51 @@ export default function Education() {
               </div>
 
             </div>
-          </article>
+          </motion.article>
 
           {/* KL University */}
-          <article className="overflow-hidden rounded-3xl border border-white/10 bg-[#111827] transition duration-300 hover:-translate-y-1 hover:border-white/20">
+          <motion.article
+            initial={{
+              opacity: 0,
+              y: 60,
+              scale: 0.96,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            viewport={{
+              once: false,
+              amount: 0.2,
+            }}
+            transition={{
+              duration: 0.8,
+              delay: 0.6,
+              ease: "easeOut",
+            }}
+            className="min-w-0 overflow-hidden rounded-3xl border border-white/10 bg-[#111827] transition-colors duration-300 hover:border-white/20"
+          >
 
-            {/* Logo Banner */}
-            <div className="flex h-52 items-center justify-center bg-white p-8">
+            {/* KL Logo */}
+            <div className="flex h-52 w-full items-center justify-center overflow-hidden bg-white p-6 sm:p-8">
               <Image
                 src="/klu-logo.png"
                 alt="KL University logo"
                 width={420}
                 height={180}
-                className="max-h-40 w-auto object-contain"
+                className="max-h-40 max-w-full w-auto object-contain"
               />
             </div>
 
-            {/* Content */}
-            <div className="p-8 text-center md:p-10">
+            {/* KL Content */}
+            <div className="min-w-0 p-7 text-center md:p-10">
 
-              <h3 className="text-2xl font-bold uppercase tracking-wide text-white">
+              <h3 className="break-words text-2xl font-bold uppercase tracking-wide text-white">
                 KL University
               </h3>
 
-              <p className="mt-7 text-xl leading-8 text-zinc-200">
+              <p className="mt-7 break-words text-xl leading-8 text-zinc-200">
                 Bachelor of Technology in Electronics and Computer Science
               </p>
 
@@ -141,7 +196,7 @@ export default function Education() {
                   ].map((course) => (
                     <span
                       key={course}
-                      className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-zinc-400"
+                      className="max-w-full break-words rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-zinc-400"
                     >
                       {course}
                     </span>
@@ -151,7 +206,7 @@ export default function Education() {
               </div>
 
             </div>
-          </article>
+          </motion.article>
 
         </div>
 
